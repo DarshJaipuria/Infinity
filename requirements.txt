@@ -1,0 +1,42 @@
+# Infinity - Python dependencies
+# Install with:  pip install -r requirements.txt
+# Requires Python 3.10+ on Windows. tkinter ships with the standard python.org installer.
+
+# --- LLM engine (local Ollama) ---
+ollama>=0.4.0
+tiktoken>=0.5.0
+requests>=2.31.0
+rich>=13.7.0
+
+# --- GUI ---
+PyQt6>=6.6.0
+
+# --- Desktop / OS automation (Windows) ---
+pyautogui>=0.9.54
+mss>=9.0.1
+pywin32>=306; sys_platform == "win32"
+opencv-python>=4.8.0
+pillow>=10.0.0
+numpy>=1.24.0
+
+# --- Screen OCR ---
+rapidocr>=1.4.0
+onnxruntime>=1.16.0
+
+# --- Document readers ---
+pypdf>=4.0.0
+python-docx>=1.1.0
+
+# --- Web search & research ---
+ddgs>=9.0.0
+wikipedia-api>=0.6.0
+curl-cffi>=0.6.0
+beautifulsoup4>=4.12.0
+
+# --- Shortcut retrieval (BM25) ---
+rank-bm25>=0.2.2
+langchain-core>=0.1.0
+langchain-community>=0.0.20
+
+# --- Generated-code checking (optional but recommended) ---
+pyflakes>=3.0.0

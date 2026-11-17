@@ -1,0 +1,6 @@
+{
+    "Open Chrome Browser": "Opens Google Chrome browser by pressing Windows key and selecting the Chrome icon from taskbar. Used when Chrome needs to be accessed for browsing or when it's not currently in the foreground.",
+    "Open YouTube in Chrome Browser": "Opens Google Chrome browser and navigates to YouTube.com using desktop tools. Used when you need to access YouTube content on your desktop without using web search tools. This workflow ensures YouTube loads correctly in the current Chrome window.",
+    "Open Chrome and Compose Gmail Email": "Opens Google Chrome browser and navigates to Gmail to compose a new email. Used for quick email composition tasks that require Chrome as the email client. Includes steps to add recipient, subject, and email body content.",
+    "architecture_test": "Workflow generated from session for: architecture_test"
+}

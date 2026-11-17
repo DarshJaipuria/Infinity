@@ -1,0 +1,6 @@
+# Normalise line endings (the project currently mixes CRLF and LF)
+* text=auto
+*.py   text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf

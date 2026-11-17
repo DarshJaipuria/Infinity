@@ -1,0 +1,94 @@
+[
+    {
+    "type": "function",
+    "function": {
+        "name": "get_tools",
+        "description": "Get a different set of tools.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "tool_set": {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "const":"web_search_tools",
+                            "description": "View user screen, web search, weather forecast, wiki search and other basic tools."
+                        },
+                        {
+                            "const": "desktop_tools",
+                            "description": "Control desktop applications, performs UI actions, clicks, and types to open apps, navigate for user."
+                        },
+                        {
+                            "const": "file_modification_tools",
+                            "description": "Create, write, modify, delete files and directories."
+                        },
+                        {
+                            "const": "read_file_tools",
+                            "description": "Read, list or search for different types of files- images, pdf, docx, csv, txt, log etc."
+                        },
+                        {
+                            "const": "coding_tools",
+                            "description": "Understand, edit, search, or diagnose source code and Jupyter notebook cells. Not for ordinary file or directory housekeeping."
+                        }
+                    ],
+                    "description":"Tool set to switch to."
+                }
+            },
+            "required": ["tool_set"]
+            }
+        }
+    },
+    {
+        "type":"function",
+        "function":{
+            "name":"view_screen",
+            "description":"View user's primary computer screen.",
+            "parameters":{
+                "type":"object",
+                "properties":{}
+            }
+        }
+    },
+    {
+        "type":"function",
+        "function":{
+            "name":"update_system_memory",
+            "description":"Regenerate the memory profile entirely. Use when user explicitly states to 'remember','forget' or similar.",
+            "parameters":{
+                "type":"object",
+                "properties":{
+                    "memory":{"type":"string","description":"Markdown formatted memory text to rewrite. Follow the previous system memory format."}
+                },
+                "required":["memory"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_scratchpad",
+            "description": "Write down your plan, track sub-tasks, save code snippets, or whatever you want. Use this to remember what you are doing across turns. This tool overwrites the old scratchpad.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "notes": {"type": "string","description": "The complete, updated text of your scratchpad notes."}
+                },
+            "required": ["notes"]
+            }
+        }
+    },
+    {
+        "type":"function",
+        "function":{
+            "name":"clear_context",
+            "description":"Clear context, only use when context limit warning is triggered. WARNING: This tool deletes the entire chat (except system memory), so leave a full explanation for next agent to continue. Use the next agent can only read- `message` argument, scratchpad notes and system memory.",
+            "parameters":{
+                "type":"object",
+                "properties":{
+                    "message":{"type":"string","description":"A fully detailed message explaining the situation and tasks pending(if any) to pass on to the next agent."}
+                },
+                "required":["message"]
+            }
+        }
+    }
+]
