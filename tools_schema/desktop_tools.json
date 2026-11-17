@@ -81,7 +81,7 @@
         "type":"function",
         "function":{
             "name":"scroll",
-            "description":"Scroll up or down at any coordinate by lines.",
+            "description":"Scroll up or down at any coordinate.",
             "parameters":{
                 "type":"object",
                 "properties":{
@@ -99,7 +99,7 @@
         "type":"function",
         "function":{
             "name":"search_shortcut",
-            "description":"Search a keyboard shortcut by its action.",
+            "description":"Search for a keyboard shortcut.",
             "parameters":{
                 "type":"object",
                 "properties":{
@@ -114,7 +114,7 @@
         "type":"function",
         "function":{
             "name":"wait",
-            "description":"Wait for loading screens or downloads or for repetitive task.",
+            "description":"Wait for loading screens, downloads or for repetitive task.",
             "parameters":{
                 "type":"object",
                 "properties":{
