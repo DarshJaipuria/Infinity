@@ -6,6 +6,13 @@ write and test code, and compose Gmail drafts, all driven by a local LLM so noth
 
 It comes with a glass-style desktop GUI (PyQt6) and a classic terminal mode.
 
+## Video Demo
+
+
+https://github.com/user-attachments/assets/74f07172-c9f1-4e78-b28c-04bc3f4b26d0
+
+
+
 ## Features
 
 | Skill / tool group | What it does |
@@ -122,3 +129,6 @@ Infinity controls your real mouse and keyboard and can delete files.
 
 Everything runs locally through Ollama. Chat history, logs, screenshots, memory and generated code are stored on your
 machine and are excluded from git by `.gitignore`.
+
+
+
