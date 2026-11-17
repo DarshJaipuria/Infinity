@@ -25,7 +25,7 @@ It comes with a glass-style desktop GUI (PyQt6) and a classic terminal mode.
 - **Windows 10 / 11** (uses `pywin32`, the Windows registry and Windows input APIs)
 - **Python 3.10+** (with tkinter, included in the python.org installer)
 - **[Ollama](https://ollama.com/download)** installed and running
-- A model pulled in Ollama. The default is set in `config.json` (`qwen3.5:4b`)
+- A model pulled in Ollama. The default is set in `config.json` (`qwen3.5:4b`). Qwen3.5 series model is recommended for best performance on computers with low memory (like for 4GB VRAM use qwen3.5:4b).
 
 ## Installation
 
