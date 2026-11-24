@@ -1,42 +1,49 @@
-# Infinity - Python dependencies
-# Install with:  pip install -r requirements.txt
-# Requires Python 3.10+ on Windows. tkinter ships with the standard python.org installer.
+# =============================================================================
+#  Infinity - Python dependencies
+# =============================================================================
+#  Platform : Windows 10 / 11
+#  Python   : 3.11, 3.12 or 3.13 (3.12 recommended). Not 3.10 or older, not 3.14+ yet.
+#
+#  Install  : python -m pip install -r requirements.txt
+#             (always through "python -m pip" so the packages go to the SAME Python
+#              that runs Infinity - this matters when several Pythons are installed)
+# =============================================================================
 
-# --- LLM engine (local Ollama) ---
-ollama>=0.4.0
-tiktoken>=0.5.0
-requests>=2.31.0
-rich>=13.7.0
+# --- Model connection and terminal UI (required) ----------------------------
+ollama>=0.5,<1            # talks to the local Ollama server
+rich>=13.7,<16            # live streaming output in the terminal
 
-# --- GUI ---
-PyQt6>=6.6.0
+# --- Mouse, keyboard, screen (required) --------------------------------------
+pyautogui>=0.9.54,<1      # mouse + keyboard control
+pywin32>=306; sys_platform == "win32"   # window handling (win32gui / win32con)
+numpy>=1.26,<3            # image maths for screenshots
+Pillow>=10.4,<14          # screenshots and image handling
+opencv-python>=4.8,<5     # canvas / swatch detection, annotated screenshots
 
-# --- Desktop / OS automation (Windows) ---
-pyautogui>=0.9.54
-mss>=9.0.1
-pywin32>=306; sys_platform == "win32"
-opencv-python>=4.8.0
-pillow>=10.0.0
-numpy>=1.24.0
+# --- Screen reading: OCR (required for click_text, read_screen_text) ----------
+rapidocr>=3.0,<4          # OCR engine (downloads its small models on first use)
+onnxruntime>=1.18,<2      # runs the OCR models
 
-# --- Screen OCR ---
-rapidocr>=1.4.0
-onnxruntime>=1.16.0
+# --- Desktop GUI (optional: without it Infinity falls back to --cli) ----------
+PyQt6>=6.6,<7             # the glass GUI
 
-# --- Document readers ---
-pypdf>=4.0.0
-python-docx>=1.1.0
+# --- Web research (web_research skill) ---------------------------------------
+ddgs>=9,<10               # DuckDuckGo search
+requests>=2.31,<3         # HTTP, Wikipedia, weather
+beautifulsoup4>=4.12,<5   # clean text from web pages
+curl_cffi>=0.7,<1         # makes page downloads look like a normal browser
 
-# --- Web search & research ---
-ddgs>=9.0.0
-wikipedia-api>=0.6.0
-curl-cffi>=0.6.0
-beautifulsoup4>=4.12.0
+# --- Reading documents (PDF, DOCX) -------------------------------------------
+pypdf>=4,<8               # read_pdf
+python-docx>=1.1,<2       # read_docx
 
-# --- Shortcut retrieval (BM25) ---
-rank-bm25>=0.2.2
-langchain-core>=0.1.0
-langchain-community>=0.0.20
+# --- Code writing: automatic checks (optional but recommended) ----------------
+pyflakes>=3,<5            # finds undefined names in generated code
+tiktoken>=0.7,<1          # token counting for chat history (falls back to an estimate)
 
-# --- Generated-code checking (optional but recommended) ---
-pyflakes>=3.0.0
+# --- Extra tool sets in functions\ (optional; each one loads only if present) --
+wikipedia-api>=0.7,<1     # wiki_search
+mss>=9,<11                # fast screenshots for the desktop tool set
+langchain-core>=0.3,<2    # shortcut search (BM25) for the desktop tool set
+langchain-community>=0.3,<1
+rank-bm25>=0.2.2,<1       # needed by langchain's BM25Retriever

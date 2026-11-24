@@ -12,6 +12,8 @@ dist/
 # Virtual environments
 venv/
 .venv/
+.venv-py312/
+.venv-py315/
 env/
 ENV/
 
